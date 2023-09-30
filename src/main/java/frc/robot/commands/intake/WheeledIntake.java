@@ -3,11 +3,11 @@ package frc.robot.commands.intake;
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-public class Intake extends SubsystemBase {
+public class WheeledIntake extends SubsystemBase {
     private final CANSparkMax motor1 = new CANSparkMax(15, CANSparkMaxLowLevel.MotorType.kBrushless);
     private final CANSparkMax motor2 = new CANSparkMax(14, CANSparkMaxLowLevel.MotorType.kBrushless);
 
-    public Intake() {
+    public WheeledIntake() {
         motor1.restoreFactoryDefaults();
         motor2.restoreFactoryDefaults();
         setCurrentLimit(20);
@@ -24,8 +24,12 @@ public class Intake extends SubsystemBase {
         motor1.set(0);
     }
 
-    public void setIntake(double speed) {
-        motor1.set(speed);
+    public void intakeOn() {
+        motor1.set(0.1);
+    }
+
+    public void outtakeOn() {
+        motor1.set(-0.1);
     }
 
     public void setCurrentLimit(int limit) {

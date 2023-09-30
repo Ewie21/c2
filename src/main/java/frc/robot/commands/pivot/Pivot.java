@@ -10,6 +10,7 @@ public class Pivot extends SubsystemBase {
     private final TalonFX pivot2 = new TalonFX(10);
 
     public Pivot() {
+        pivot1.setInverted(true);
         pivot2.follow(pivot1);
         pivot1.setNeutralMode(NeutralMode.Brake);
         pivot2.setNeutralMode(NeutralMode.Brake);

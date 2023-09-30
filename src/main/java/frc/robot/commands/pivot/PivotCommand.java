@@ -1,13 +1,13 @@
 package frc.robot.commands.pivot;
 
-import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 
 public class PivotCommand extends CommandBase {
     private final Pivot pivot;
-    private final XboxController controller;
+    private final CommandXboxController controller;
 
-    public PivotCommand(Pivot pivot, XboxController controller) {
+    public PivotCommand(Pivot pivot, CommandXboxController controller) {
         this.pivot = pivot;
         this.controller = controller;
         addRequirements(pivot);
