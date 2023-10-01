@@ -8,6 +8,7 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import frc.robot.commands.intake.WheeledIntake;
 import frc.robot.commands.intake.IntakeCommand;
+import frc.robot.commands.intake.OuttakeCommand;
 import frc.robot.commands.pivot.Pivot;
 import frc.robot.commands.pivot.PivotCommand;
 
@@ -24,6 +25,7 @@ public class RobotContainer {
 
   private void configureBindings() {
     driver.a().whileTrue(new IntakeCommand(intakeSubsystem));
+    driver.b().whileTrue(new OuttakeCommand(intakeSubsystem));
     pivotSubsystem.setDefaultCommand(pivot);
   }
 
