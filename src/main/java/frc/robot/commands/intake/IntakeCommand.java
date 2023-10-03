@@ -15,4 +15,9 @@ public class IntakeCommand extends CommandBase {
         intake.intakeOn(); // Ask Zach if this should become a setSpeed() function instead
         intake.setCurrentLimit(10);
     }
+
+    @Override
+    public void end(boolean interrupted) {
+        intake.stop();
+    }
 }

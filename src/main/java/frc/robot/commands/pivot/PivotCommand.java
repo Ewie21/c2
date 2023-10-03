@@ -19,4 +19,9 @@ public class PivotCommand extends CommandBase {
         double speed = Math.abs(raw_speed * 0.1) > 0.1 ? 0 : raw_speed;
         pivot.setPivot(speed);
     }
+    
+    // @Override
+    // public void end(boolean interrupted) {
+    //     pivot.stop(0);
+    // }
 }

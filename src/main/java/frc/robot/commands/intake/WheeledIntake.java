@@ -15,8 +15,8 @@ public class WheeledIntake extends SubsystemBase {
         motor1.setIdleMode(CANSparkMax.IdleMode.kBrake);
         motor2.setIdleMode(CANSparkMax.IdleMode.kBrake);
 
-        motor2.follow(motor1);
         motor1.setInverted(false);
+        motor2.follow(motor1, true);
         motor1.set(0);
     }
 
