@@ -12,7 +12,11 @@ public class OuttakeCommand extends CommandBase {
 
     @Override
     public void initialize() {
-        intake.outtakeOn(); // Ask Zach if this should become a setSpeed() function instead
-        intake.setCurrentLimit(10);
+        intake.outtakeOn(0.1);
+    }
+
+    @Override
+    public void end(boolean interrupted) {
+        intake.stop();
     }
 }

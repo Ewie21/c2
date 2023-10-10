@@ -12,8 +12,7 @@ public class IntakeCommand extends CommandBase {
 
     @Override
     public void initialize() {
-        intake.intakeOn(); // Ask Zach if this should become a setSpeed() function instead
-        intake.setCurrentLimit(10);
+        intake.intakeOn(0.1);
     }
 
     @Override

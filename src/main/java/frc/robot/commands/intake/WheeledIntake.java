@@ -24,16 +24,16 @@ public class WheeledIntake extends SubsystemBase {
         motor1.set(0);
     }
 
-    public void intakeOn() {
-        motor1.set(0.1);
+    public void intakeOn(double number) {
+        motor1.set(number);
     }
 
-    public void outtakeOn() {
-        motor1.set(-0.1);
+    public void outtakeOn(double number) {
+        motor1.set(-number);
     }
 
     public void setCurrentLimit(int limit) {
-        motor1.setSmartCurrentLimit(limit);
+        motor1.setSmartCurrentLimit(limit); 
         motor2.setSmartCurrentLimit(limit);
     }
 }

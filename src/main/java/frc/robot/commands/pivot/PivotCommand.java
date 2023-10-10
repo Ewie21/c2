@@ -16,12 +16,12 @@ public class PivotCommand extends CommandBase {
     @Override
     public void execute() {
         double raw_speed = controller.getLeftX();
-        double speed = Math.abs(raw_speed * 0.1) > 0.1 ? 0 : raw_speed;
+        double speed = Math.abs(raw_speed) < 0.1 ? 0 : raw_speed * 0.1; // deadzone
         pivot.setPivot(speed);
     }
     
-    // @Override
-    // public void end(boolean interrupted) {
-    //     pivot.stop(0);
-    // }
+    @Override
+    public void end(boolean interrupted) {
+        pivot.stop();
+    }
 }

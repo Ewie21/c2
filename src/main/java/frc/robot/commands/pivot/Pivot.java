@@ -13,12 +13,12 @@ public class Pivot extends SubsystemBase {
     public Pivot() {
         pivot1.configStatorCurrentLimit(new StatorCurrentLimitConfiguration(true, 60, 60, 0));
         pivot2.configStatorCurrentLimit(new StatorCurrentLimitConfiguration(true, 60, 60, 0));
-        pivot1.setInverted(false);
         pivot1.configForwardSoftLimitThreshold(139_000);
         pivot1.configForwardSoftLimitEnable(true);
         pivot1.configReverseSoftLimitThreshold(-134_500);
         pivot1.configReverseSoftLimitEnable(true);
-
+        
+        pivot1.setInverted(false);
         pivot2.setInverted(true);
         pivot2.follow(pivot1);
         pivot1.setNeutralMode(NeutralMode.Brake);
