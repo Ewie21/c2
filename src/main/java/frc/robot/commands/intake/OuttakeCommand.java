@@ -12,7 +12,7 @@ public class OuttakeCommand extends CommandBase {
 
     @Override
     public void initialize() {
-        intake.outtakeOn(0.1);
+        intake.intakeOn(-0.1);
     }
 
     @Override
